@@ -1,0 +1,24 @@
+{
+  "name": "moviecommunity",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "cookie-parser": "^1.4.6",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.6",
+    "express": "^4.16.4",
+    "express-mysql-session": "^2.1.7",
+    "express-session": "^1.17.2",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
+    "promise": "^8.1.0",
+    "session": "^0.1.0"
+  }
+}
