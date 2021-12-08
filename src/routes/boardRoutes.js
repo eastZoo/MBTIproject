@@ -2,26 +2,27 @@ var express = require('express')
 var router = express.Router();
 const boardController = require('../controller/boardController')
 
-// 게시판 목록
-router.get('/list', boardController.boardList);
+// 메인(MBTI 고르는 화면)
+router.get('/list', boardController.mbtiMain);
 
-// 게시글 작성
-router.post('/insert', boardController.boardInsert);
+// MBTI 게시판 목록
+router.get('/list/:mbti_mbti_id', boardController.mbtiBoardList);
 
-// 게시글 작성 페이지
-router.get('/insert', boardController.boardInsertPage);
+// MBTI 추천 여행지
+router.get('/list/:travel_id/:mbti_mbti_id', boardController.mbtiTravel);
 
-// 게시글 수정
-router.patch('/patch/:board_num', boardController.boardUpdate);
+// 매니저 추천 여행지
+// router.get('/list/:', boardController.boardInsertPage);
 
-// 게시글 수정 페이지
-router.get('/patch/:board_num', boardController.boardUpdatePage);
+// 전체 게시판
+router.get('/list/:board_id/:mbti_mbti_id', boardController.mbtiBoard);
 
-// 게시글 삭제
-router.delete('/delete/:board_num', boardController.boardDelete);
+// 마이페이지
+router.get('/mypage/:user_user_id', boardController.mypage);
 
-// 게시글 상세보기
-router.get('/read/:board_num', boardController.boardRead);
+// 문의사항
+router.get('/question/:mbti_mbti_id', boardController.question);
+
 
 
 module.exports = router;
