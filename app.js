@@ -7,6 +7,7 @@ var logger = require('morgan');
 
 var userRouter = require('./src/routes/userRoutes')
 var boardRouter = require('./src/routes/boardRoutes');
+var mbtiRouter = require('./src/routes/mbtiRoutes');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/board', boardRouter);
 app.use('/user', userRouter);
+app.use('/mbti', mbtiRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
