@@ -26,7 +26,8 @@ exports.mypage = async(user_id) => {
 
 exports.updateMypage = async(req) => {
     try{
-        console.log("pass");
+        console.log("pass req");
+        console.log(req)
         let mypage = await pool.query(boardQuery.updateMypage, req)
         console.log(mypage[0]);
         return mypage[0]

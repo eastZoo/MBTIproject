@@ -12,4 +12,18 @@ router.get("/detail/:post_id", mbtiController.mbtiDetail)
 
 // router.get("/board/register", mbtiController.boardRegister)
 
+// 게시글 생성
+router.get("/board/register", mbtiController.getboardRegister)
+
+router.post("/board/register/:post_id", mbtiController.boardRegister)
+
+// 글 수정
+
+router.post("/update/board", mbtiController.mbtiBoardUpdate)
+
+router.get("/update/board/:post_id", mbtiController.mbtiBoardUpdatePage);
+
+
+// 글 삭제
+
 module.exports = router;

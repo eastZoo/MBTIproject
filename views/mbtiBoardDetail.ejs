@@ -13,7 +13,7 @@
 </head>
 
 <body style="margin-top: 50px; margin-left: 200px; margin-right: 200px; ">
-
+    <h2 name="post_id"><%=mbtiDetail.post_id%></h2>
     <h1>mbti 게시글 상세 정보</h1>
     <br><br><br><br>
     <h2><span class="badge bg-secondary" name="post_title">게시글 제목</span>
@@ -44,8 +44,18 @@
         <%=mbtiDetail.post_review%>
     </h2>
     <div>
-        <img src="https://post-phinf.pstatic.net/MjAxODA0MDhfNCAg/MDAxNTIzMTE0NTM1Mjc5.VPYtVR6VFTRUb5Bd5TSrucmTqjkIK6YpXQLBAs5D99cg.mAM1gBElz_GsJ-9gcNXbAWbO5wpyxnvoGx1lpp20vHYg.JPEG/Gyeongju-travel-information-intro.jpg?type=w1200" alt = "경주" class="img-responsive">
+        <img src="https://post-phinf.pstatic.net/MjAxODA0MDhfNCAg/MDAxNTIzMTE0NTM1Mjc5.VPYtVR6VFTRUb5Bd5TSrucmTqjkIK6YpXQLBAs5D99cg.mAM1gBElz_GsJ-9gcNXbAWbO5wpyxnvoGx1lpp20vHYg.JPEG/Gyeongju-travel-information-intro.jpg?type=w1200" alt = "경주" class="img-responsive" width="500px" height="300px" >
     </div>
+    <br>
+    <ul class="btn-group" style="margin-left: 600px;">
+        <% if(mbtiDetail.user_user_id == session){ %>
+            <button type="submit" class="btn btn-dark" onclick="location.href='/mbti/update/board/<%= mbtiDetail.post_id%>'">수정</button>
+            <button class="btn btn-dark">삭제</button>
+            <button class="btn btn-dark">목록</button>
+          <% } else{ %>
+            <button class="btn btn-dark">목록</button>
+            <% } %>
+      </ul>
 </body>
 
 </html>

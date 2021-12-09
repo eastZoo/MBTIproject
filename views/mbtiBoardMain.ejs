@@ -32,18 +32,19 @@
       for(var i=0; i<mbtiBoard.length; i++) {
       %>
       <tr>
-        <th><%=mbtiBoard[i].post_id%></th>
-        <th><%=mbtiBoard[i].post_title%></th>
-        <th><%=mbtiBoard[i].post_writingTime%></th>
-        <th><%=mbtiBoard[i].board_board_id%></th>
-        <th><%=mbtiBoard[i].user_user_id%></th>
-        <td><button class="btn btn-sm btn-primary btn-block" type="button" onclick='location.href="/mbti/detail/<%= mbtiBoard[i].post_id %>"'>상세 보기</button></td>
+        <th><%= mbtiBoard[i].post_id %></th>
+        <th><a href='/mbti/detail/<%= mbtiBoard[i].post_id %>'><%= mbtiBoard[i].post_title %></a></th>
+        <th><%= mbtiBoard[i].post_writingTime %></th>
+        <th><%= mbtiBoard[i].board_board_id %></th>
+        <th><%= mbtiBoard[i].user_user_id %></th>
       </tr>
       <% } %>
-      <td><button class="btn btn-sm btn-primary btn-block" type="button" onclick='location.href="/mbti/detail/<%= mbtiBoard[i].post_id %>"'>생성</button></td>
     </tbody>
   </table>
-  <br><br><br><br><br>
+  <button class="btn btn-sm btn-dark btn-block" type="button"
+    onclick='location.href="/mbti/board/register"'>생성</button>
+    <br><br><br><br><br>
+  
 </body>
 
 </html>

@@ -30,9 +30,10 @@ exports.updateMypage = async(req, res) => {
     const {user_id} = req.params
     try{
         let session = req.session.user_id
+        console.log(session)
         let update = await boardServiece.updateMypage([user_name, user_address, user_tel, user_travel, mbti_mbti_id, session])
         console.log(update);
-        return res.redirect('/board/mypage/update/')
+        return res.redirect('/board/mypage/update')
     }catch(err){
         console.log(err)
         return res.status(500).json(err);

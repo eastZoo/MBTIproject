@@ -3,7 +3,7 @@ var pool = require('../../middleware/pool');
 
 exports.mbtiBoard = async(req, res) => {
     try{
-        let mbtiBoard = await pool.query(mbtiQuery.mbtiBoard)
+        let mbtiBoard = await pool.query(mbtiQuery.mbtiBoard, req)
         return mbtiBoard[0]
     }catch(err){
         console.log(err)
@@ -11,13 +11,33 @@ exports.mbtiBoard = async(req, res) => {
     }
 }
 
-exports.mbtiDetail = async(req, res) => {
+exports.mbtiDetail = async(req) => {
     try{
-        console.log("mbtiDetail");
-        console.log(req);
         let mbtiDetail = await pool.query(mbtiQuery.mbtiDetail, req)
-        console.log("pass");
         return mbtiDetail[0]
+    }catch(err){
+        console.log(err)
+        return res.status(500).json(err);
+    }
+}
+
+exports.mbtiBoardUpdate = async(req) => {
+    try{
+        console.log("service");
+        console.log(req);
+        let update = await pool.query(mbtiQuery.mbtiBoardUpdate, req);
+        return update[0]
+    }catch(err){
+        console.log(err)
+        return res.status(500).json(err)
+    }
+}
+
+exports.insertMBTIBoard = async(req, res) => {
+    try{
+        let insertMBTIBoard = await pool.query(mbtiQuery.insertMBTIBoard, req)
+        console.log("pass");
+        return insertMBTIBoard[0]
     }catch(err){
         console.log(err)
         return res.status(500).json(err);
