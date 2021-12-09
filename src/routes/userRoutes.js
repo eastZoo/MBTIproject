@@ -15,7 +15,7 @@ router.post('/signin', userController.signIn);
 router.get('/signin', userController.signInPage);
 
 // 로그아웃
-router.get('/signout', userController.signOut);
+router.get('/logout', userController.signOut);
 
 // 메인 페이지
 router.get('/main', userController.mainPage);

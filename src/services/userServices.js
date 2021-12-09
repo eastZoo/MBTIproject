@@ -21,9 +21,9 @@ exports.signIn = async(user_id, user_password) => {
     }
 }
 
-exports.mainPage = async(user_name, user_id) => {
+exports.mainPage = async(user_name, user_id, mbti_mbti_id) => {
     try{
-        let user = await pool.query(userQuery.mainPage, [user_name, user_id])
+        let user = await pool.query(userQuery.mainPage, [user_name, user_id, mbti_mbti_id])
         return user[0]
     }catch(err){
         console.log(err)

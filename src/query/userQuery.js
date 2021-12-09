@@ -5,4 +5,4 @@ exports.signUp = 'insert into user (user_id, user_password, user_name, user_gend
 exports.signIn = 'select * from user where user_id=? and user_password=?'
 
 // 로그인한 유저에게 보이는 메인 페이지
-exports.mainPage = 'select * from board'
+exports.mainPage = 'SELECT u.*, m.* FROM user u, mbti m WHERE u.mbti_mbti_id = m.mbti_id'

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <title>mbti 게시판</title>
+</head>
+
+<body class="text-center" style="margin-top: 50px; margin-left: 400px; margin-right: 400px; ">
+  <h1>mbti 게시판</h1>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">게시글 번호</th>
+        <th scope="col">게시글 제목</th>
+        <th scope="col">게시글 작성 일시</th>
+        <th scope="col">게시판 번호</th>
+        <th scope="col">회원 아이디</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%
+      for(var i=0; i<mbtiBoard.length; i++) {
+      %>
+      <tr>
+        <th><%=mbtiBoard[i].post_id%></th>
+        <th><%=mbtiBoard[i].post_title%></th>
+        <th><%=mbtiBoard[i].post_writingTime%></th>
+        <th><%=mbtiBoard[i].board_board_id%></th>
+        <th><%=mbtiBoard[i].user_user_id%></th>
+        <td><button class="btn btn-sm btn-primary btn-block" type="button" onclick='location.href="/mbti/detail/<%= mbtiBoard[i].post_id %>"'>상세 보기</button></td>
+      </tr>
+      <% } %>
+      <td><button class="btn btn-sm btn-primary btn-block" type="button" onclick='location.href="/mbti/detail/<%= mbtiBoard[i].post_id %>"'>생성</button></td>
+    </tbody>
+  </table>
+  <br><br><br><br><br>
+</body>
+
+</html>

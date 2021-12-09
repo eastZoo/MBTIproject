@@ -3,44 +3,36 @@
 
 
 <header>
-  <div class="px-3 py-2 bg-dark text-white">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-            <use xlink:href="#bootstrap" />
-          </svg>
-        </a>
-
-        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-          <li>
-            <a href="#" class="nav-link text-secondary">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                <use xlink:href="#home" />
-              </svg>
-              Home
-            </a>
+  <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/user/main">Home</a>
           </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                <use xlink:href="#speedometer2" />
-              </svg>
-              signup
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                <use xlink:href="#table" />
-              </svg>
-              signin
-            </a>
-          </li>
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <% if(user.user_id==null){ %>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/user/signin" style="margin-right: 10px;">로그인</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/user/signup">회원가입</a></li>
+            <% } else{ %>
+              <li class="nav-item"><a class="nav-link active" aria-current="page">
+                  <%= user.user_id %>님 환영합니다
+                </a></li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page"
+                  href="/mypage/main/<%= user.user_id %>">마이페이지</a></li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="/user/logout">로그아웃</a></li>
+              <% } %>
         </ul>
       </div>
     </div>
-  </div>
+    </ul>
+  </nav>
+
 </header>
 
 <head>
@@ -57,8 +49,10 @@
 
 <body class="text-center">
   <br>
-
-  <form style="margin-left: 600px; margin-right: 600px;" action="/user/signin" method="POST">
+  <h1>로그인</h1>
+  <br>
+  <br>
+  <form style="margin-left: 550px; margin-right: 550px;" action="/user/signin" method="POST">
     <div class="input-group mb-3 has-validation">
       <span class="input-group-text">아이디</span>
       <input type="text" class="form-control" id="user_id" placeholder="아이디를 입력해주세요" name="user_id" required>
