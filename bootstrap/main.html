@@ -16,36 +16,50 @@
 <body class="text-center" style="margin-top: 50px; margin-right: 80px; margin-left: 80px; margin-bottom: 20px;">
   <form action="/book/patch/<%=patch[0].book_uid%>" method="POST">
     <div class="input-group input-group-lg">
-      <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">제목</span>
+      <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">게시글 제목</span>
       <input type="text" class="form-control" name="book_name" value="<%=patch[0].book_name%>">
     </div>
     <br>
     <div class="row">
       <div class="col">
-        <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">제목</span>
-        <input type="text" class="form-control" placeholder="저자" name="book_writer" value="<%=patch[0].book_writer%>"/>
-      </div>
-      <div class="col">
-        <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">제목</span>
-        <input type="text" class="form-control" placeholder="출판사" name="book_publishing" value="<%=patch[0].book_publishing%>"/>
-      </div>
-      <div class="col">
-        <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">제목</span>
+        <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">여행 장소</span>
         <input type="text" class="form-control" placeholder="재고량" name="book_num" value="<%=patch[0].book_num%>"/>
       </div>
       <div class="col">
-        <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">제목</span>
+        <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">여행 시작 날짜</span>
+        <input type="text" class="form-control" placeholder="금액" name="book_amount" value="<%=patch[0].book_amount%>"/>
+      </div>
+      <div class="col">
+        <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">여행 마지막 날짜</span>
+        <input type="text" class="form-control" placeholder="금액" name="book_amount" value="<%=patch[0].book_amount%>"/>
+      </div>
+      <div class="col">
+        <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">여행 이동수단</span>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>여행 이동수단</option>
+          <option value="1">자가</option>
+          <option value="2">대중교통(버스, 지하철)</option>
+          <option value="3">시외버스</option>
+          <option value="3">기차</option>
+        </select>
+      </div>
+      <div class="col">
+        <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">여행 숙소</span>
         <input type="text" class="form-control" placeholder="금액" name="book_amount" value="<%=patch[0].book_amount%>"/>
       </div>
     </div>
-    <br>
     <div class="mb-3">
       <label  class="form-label"></label>
-      <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">제목</span>
+      <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">여행 한 줄 소감</span>
+      <textarea class="form-control" rows="1" name="book_detail" placeholder="상세내용" value="<%=patch[0].book_detail%>"><%=patch[0].book_detail%></textarea>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label"></label>
+      <span class="input-group-text" name="book_name" value="<%=patch[0].book_name%>">게시글 내용</span>
       <textarea class="form-control" rows="3" name="book_detail" placeholder="상세내용" value="<%=patch[0].book_detail%>"><%=patch[0].book_detail%></textarea>
     </div>
     <br>
-    <button type="submit" class="btn btn-dark">저장</button>
+    <button type="submit" class="btn btn-dark btn-lg" style="margin-left: 1200px;">저장</button>
   </form>
 
 

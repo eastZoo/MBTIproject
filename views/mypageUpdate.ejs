@@ -14,31 +14,31 @@
 </head>
 
 <body class="text-center" style="margin-top: 50px; margin-right: 80px; margin-left: 80px; margin-bottom: 20px;">
-    <form action="/board/mypage/update" method="post">
+    <form action="/board/mypage/update" method="POST">
         <div class="input-group input-group-lg">
             <span class="input-group-text" name="user_name">이름</span>
-            <input type="text" class="form-control" name="user_name" value="<%=user[0].user_name%>">
+            <input type="text" class="form-control" placeholder="이름" name="user_name" value="<%=user[0].user_name%>">
         </div>
         <br>
         <div class="row">
             <div class="col">
                 <span class="input-group-text" name="user_tel">전화번호</span>
-                <input type="text" class="form-control" placeholder="출판사" name="user_tel"
+                <input type="text" class="form-control" placeholder="전화번호" name="user_tel"
                     value="<%=user[0].user_tel%>" />
             </div>
             <div class="col">
                 <span class="input-group-text" name="user_address">주소</span>
-                <input type="text" class="form-control" placeholder="재고량" name="user_address"
+                <input type="text" class="form-control" placeholder="주소" name="user_address"
                     value="<%=user[0].user_address%>" />
             </div>
             <div class="col">
                 <span class="input-group-text" name="mbti_mbti_id"">MBTI</span>
-                <input type=" text" class="form-control" placeholder="금액" name="mbti_mbti_id"
+                <input type=" text" class="form-control" placeholder="MBTI" name="mbti_mbti_id"
                     value="<%=user[0].mbti_mbti_id%>" />
             </div>
             <div class="col">
                 <span class="input-group-text" name="user_travel"">여행</span>
-                <input type=" text" class="form-control" placeholder="금액" name="user_travel"
+                <input type=" text" class="form-control" placeholder="여행" name="user_travel"
                     value="<%=user[0].user_travel%>" />
             </div>
         </div>

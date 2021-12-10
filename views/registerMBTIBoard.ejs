@@ -14,64 +14,67 @@
 </head>
 
 <body class="text-center" style="margin-top: 50px; margin-left: 400px; margin-right: 400px; ">
-    <form action="/user/signup" method="POST" style="text-align: center; border: 5px;">
+
+    <form action="/mbti/board/register/:post_id" method="POST" style="text-align: center; border: 5px;">
+        <h1>mbti 여행지 생성</h1>
         <br>
-        <br>
-        <div class="form-floating mb-3" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="user_id" class="form-control" required>
-            <label for="floatingInput">아이디</label>
-        </div>
         <br>
         <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="password" name="user_password" class="form-control" id="floatingPassword"
-                placeholder="Password" required>
-            <label for="floatingPassword">비밀번호</label>
+            <input type="text" name="post_title" class="form-control">
+            <label for="floatingInput">제목</label>
         </div>
         <br>
         <br>
         <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="user_name" class="form-control" id="floatingName" placeholder="Name" required>
-            <label for="floatingInput">이름</label>
+            <input type="text" name="post_content" class="form-control">
+            <label for="floatingInput">내용</label>
         </div>
         <br>
         <br>
         <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="number" name="mbti_mbti_id" class="form-control" placeholder="추천인">
-            <label for="floatingInput">mbti</label>
+            <input type="text" name="post_travelPlace" class="form-control">
+            <label for="floatingInput">여행지</label>
         </div>
         <br>
         <br>
         <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="user_gender" class="form-control" placeholder="추천인">
-            <label for="floatingInput">성별</label>
+            <input type="text" name="post_travelStartDate" class="form-control">
+            <label for="floatingInput">여행 시작 날짜</label>
         </div>
         <br>
         <br>
         <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="user_tel" class="form-control" placeholder="추천인">
-            <label for="floatingInput">전화번호</label>
+            <input type="text" name="post_travelEndDate" class="form-control">
+            <label for="floatingInput">여행 종료 날짜</label>
         </div>
         <br>
         <br>
         <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="user_address" class="form-control" placeholder="추천인">
-            <label for="floatingInput">주소</label>
+            <input type="text" name="post_rooms" class="form-control">
+            <label for="floatingInput">추천 숙소</label>
         </div>
         <br>
         <br>
         <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="user_age" class="form-control" placeholder="추천인">
-            <label for="floatingInput">나이</label>
+            <input type="text" name="post_transport" class="form-control">
+            <label for="floatingInput">이동 수단</label>
         </div>
         <br>
         <br>
         <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="user_travel" class="form-control" placeholder="추천인">
-            <label for="floatingInput">선호하는 여행지</label>
+            <input type="text" name="post_review" class="form-control">
+            <label for="floatingInput">한 마디 후기</label>
         </div>
         <br>
         <br>
-        <button type="submit" class="btn btn-dark" style="width: 300px; height: 50px;">회원가입</button>
+        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
+            <input type="text" name="board_board_id" class="form-control">
+            <label for="floatingInput">게시판 번호</label>
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-dark" style="width: 300px; height: 50px;">작성하기</button>
+        <br>
         <br>
         <br>
     </form>
