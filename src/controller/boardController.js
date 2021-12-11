@@ -1,11 +1,13 @@
 var boardServiece = require('../services/boardService');
 
 exports.mbtiBoardList = async(req, res) =>{
-    const {mbti_id, user_id} = req.params;
+    const {mbti_id, user_id, user_name} = req.params;
     console.log(mbti_id)
+    console.log(user_name)
     try{
         var session = req.session.user_id;
         console.log(session)
+
         let mbtiList = await boardServiece.mbtiBoardList(mbti_id)
         return res.render('mbtiBoardList', {mbtiList: mbtiList})
     }catch(err){

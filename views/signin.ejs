@@ -3,7 +3,7 @@
 
 
 <header>
-  <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <!-- <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
       </div>
     </div>
     </ul>
-  </nav>
+  </nav> -->
 
 </header>
 
@@ -50,13 +50,12 @@
   <title>signup</title>
 </head>
 
-<body class="img js-fullheight" style="background-image: url(/images/bg.jpg);">
-
-  <section class="ftco-section" style="padding-top: 20px;">
-		<div class="container">
+<body class="img js-fullheight" style="background-image: url(/images/bg.jpg); ">
+  <section class="ftco-section" style="padding-top: 1px; padding-bottom: 0%;" >
+		<div class="container" style="border: 0%; margin-top: 0.5%;">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5" >
-					<a href="https://www.qries.com/">
+					<a href="signin">
             <img alt="Qries" src="/images/MT-logo-white.png"
             width="450" height="210">
          </a>
@@ -64,8 +63,8 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
-					<div class="login-wrap p-0" style="padding-top: 10px;">
-		      	<h3 class="mb-4 text-center">Have an account?</h3>
+					<div class="login-wrap p-6" style="padding-bottom: 49%;"> <!--nav바 들어가면 30%-->
+		      	<h3 class="mb-4 text-center">Login</h3>
 		      	<form action="/user/signin" class="signin-form" method="POST">
 		      		<div class="form-group">
 		      			<input id="user_id" type="text" class="form-control" placeholder="아이디를 입력해주세요" name="user_id" required>
@@ -85,11 +84,10 @@
 									</label>
 								</div>
 								<div class="w-50 text-md-right">
-									<a href="#" style="color: #fff">Forgot Password</a>
+                  <a style="color: #fff"href="/user/signup">회원가입</a>
 								</div>
 	            </div>
 	          </form>
-	          <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
 		      </div>
 				</div>
 			</div>
@@ -109,8 +107,8 @@
       crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script> -->
 </body>
 
 </html>

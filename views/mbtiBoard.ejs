@@ -45,43 +45,114 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="/stylesheets/main.css">
   <title>Hello, world!</title>
 </head>
 
-<body class="text-center" style="border: 5px;">
-  <div class="d-grid gap-2 col-12 mx-auto" role="toolbar" aria-label="Toolbar with button groups">
-    <div class="btn-group me-2" role="group" aria-label="First group" style="height: 170px;">
-      <button type="button" class="btn btn-primary fs-1" onclick="location.href='/board/list/15'">ESTJ</button>
-      <button type="button" class="btn btn-primary fs-1" onclick="location.href='/board/list/11'">ESTP</button>
-      <button type="button" class="btn btn-primary fs-1" onclick="location.href='/board/list/16'">ESFJ</button>
-      <button type="button" class="btn btn-primary fs-1" onclick="location.href='/board/list/12'">ESFP</button>
+<body class="img js-fullheight" style="background-image: url(/images/bg.jpg); height: 0%; ">
+  <section class="ftco-section" id="buttons"  style="padding-top: 5%; padding-bottom: 0%;" >
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-12 mb-3">
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-secondary btn-block btn-round fs-1" onclick="location.href='/board/list/15'">ESTJ</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-secondary btn-block btn-round fs-1" onclick="location.href='/board/list/11'">ESTP</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-secondary btn-block btn-round fs-1" onclick="location.href='/board/list/16'">ESFJ</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-secondary btn-block btn-round fs-1" onclick="location.href='/board/list/12'">ESFP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-md-12 mb-3">
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-tertiary btn-block btn-round fs-1" onclick="location.href='/board/list/2'">ENTJ</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-tertiary btn-block btn-round fs-1" onclick="location.href='/board/list/14'">ENTP</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-tertiary btn-block btn-round fs-1" onclick="location.href='/board/list/3'">ENFJ</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-tertiary btn-block btn-round fs-1" onclick="location.href='/board/list/13'">ENFP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-md-12 mb-3">
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-quarternary btn-block btn-round fs-1" onclick="location.href='/board/list/4'">ISTJ</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-quarternary btn-block btn-round fs-1" onclick="location.href='/board/list/7'">ISTP</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-quarternary btn-block btn-round fs-1" onclick="location.href='/board/list/1'">ISFJ</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-quarternary btn-block btn-round fs-1" onclick="location.href='/board/list/8'">ISFP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-md-12 mb-3">
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-primary btn-block btn-round fs-1" onclick="location.href='/board/list/6'">INTJ</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-primary btn-block btn-round fs-1" onclick="location.href='/board/list/10'">INTP</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-primary btn-block btn-round fs-1" onclick="location.href='/board/list/5'">INFJ</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-primary btn-block btn-round fs-1" onclick="location.href='/board/list/9'">INFP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div class="row mb-5">
+        <div class="col-md-12 mb-2">
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-outline-primary btn-block">Default</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-outline-secondary btn-block">Default</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-outline-tertiary btn-block">Default</button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn mb-2 mb-md-0 btn-outline-quarternary btn-block">Default</button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
     </div>
-  </div>
-  <div class="d-grid gap-2 col-12 mx-auto" role="toolbar" aria-label="Toolbar with button groups">
-    <div class="btn-group me-2" role="group" aria-label="First group" style="height: 170px">
-      <button type="button" class="btn btn-success fs-1" onclick="location.href='/board/list/2'">ENTJ</button>
-      <button type="button" class="btn btn-success fs-1" onclick="location.href='/board/list/14'">ENTP</button>
-      <button type="button" class="btn btn-success fs-1" onclick="location.href='/board/list/3'">ENFJ</button>
-      <button type="button" class="btn btn-success fs-1" onclick="location.href='/board/list/13'">ENFP</button>
     </div>
-  </div>
-  <div class="d-grid gap-2 col-12 mx-auto" role="toolbar" aria-label="Toolbar with button groups">
-    <div class="btn-group me-2" role="group" aria-label="First group" style="height: 170px">
-      <button type="button" class="btn btn-danger fs-1" onclick="location.href='/board/list/4'">ISTJ</button>
-      <button type="button" class="btn btn-danger fs-1" onclick="location.href='/board/list/7'">ISTP</button>
-      <button type="button" class="btn btn-danger fs-1" onclick="location.href='/board/list/1'">ISFJ</button>
-      <button type="button" class="btn btn-danger fs-1" onclick="location.href='/board/list/8'">ISFP</button>
-    </div>
-  </div>
-  <div class="d-grid gap-2 col-12 mx-auto" role="toolbar" aria-label="Toolbar with button groups">
-    <div class="btn-group me-2" role="group" aria-label="First group" style="height: 170px">
-      <button type="button" class="btn btn-warning fs-1" onclick="location.href='/board/list/6'">INTJ</button>
-      <button type="button" class="btn btn-warning fs-1" onclick="location.href='/board/list/10'">INTP</button>
-      <button type="button" class="btn btn-warning fs-1" onclick="location.href='/board/list/5'">INFJ</button>
-      <button type="button" class="btn btn-warning fs-1" onclick="location.href='/board/list/9'">INFP</button>
-    </div>
-  </div>
+  </section>
+  <!-- - - - - -end- - - - -  -->
 
 
   <!-- Optional JavaScript; choose one of the two! -->

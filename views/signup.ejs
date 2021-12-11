@@ -15,19 +15,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <style>
-        #floating {
-        left: auto;
-        right: auto;
-        }
-    </style>
     <title>Hello, world!</title>
 </head>
 
-<body class="text-center" style="border: 5px;">
-    <section class="ftco-section" style="padding-top: 0px; padding-bottom: 1.5%;">
-        <div class="container" style="border: 5px; padding-top: 20px;">
-            <h1>회원가입</h1>
+<body class="text-center img js-fullheight" style="background-image: url(/images/bg.jpg);">
+    <section class="ftco-section" style="padding-top: 1px; padding-bottom: 0%;">
+        <div class="container" style="border: 0%; margin-top: 1%;">
+            <a><img style="align-content: center;" src="/images/register.png" width="450" height="90"></a>
             <form action="/user/signup" method="POST" style="text-align: center; border: 5px; padding-top: 0.5%;">
                 <div class="form-group" style="margin-right: 400px; margin-left: 400px;">
                     <input type="text" name="user_id" class="form-control" id="floating" placeholder="아이디" required>
@@ -41,7 +35,7 @@
                 </div>
                 <div class="form-group" style="margin-right: 400px; margin-left: 400px;">
                     <input type="number" name="mbti_mbti_id" class="form-control" id="floating" placeholder="MBTI">
-                </div>
+                </div>  
                 <div class="form-group" style="margin-right: 400px; margin-left: 400px;">
                     <input type="text" name="user_gender" class="form-control" id="floating" placeholder="성별">
                 </div>
@@ -57,7 +51,7 @@
                 <div class="form-group" style="margin-right: 400px; margin-left: 400px;">
                     <input type="text" name="user_travel" class="form-control" id="floating" placeholder="선호하는 여행지">
                 </div>
-                <button type="submit" class="btn btn-dark" style="width: 300px; height: 50px;">회원가입</button>
+                <button type="submit" class="form-control btn btn-primary submit px-3" style="width: 300px; height: 50px;">회원가입</button>
             </form>
         </div>
     </section>
