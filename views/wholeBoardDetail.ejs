@@ -13,54 +13,49 @@
 </head>
 
 <body style="margin-top: 50px; margin-left: 200px; margin-right: 200px; ">
-    <h2 name="post_id" style="visibility: hidden;"><%=mbtiDetail.post_id%></h2>
-    <h2 name="post_id" style="visibility: hidden;"><%=mbti_id%></h2>
+    <h2 name="post_id"><%=wholeDetail.post_id%></h2>
     <h1>mbti 게시글 상세 정보</h1>
-    <br>
+    <br><br><br><br>
     <h2><span class="badge bg-secondary" name="post_title">게시글 제목</span>
-        <%=mbtiDetail.post_title%>
-    </h2>
-    <br>
-    <h2><span class="badge bg-secondary" name="post_title">게시글 내용</span>
-      <%=mbtiDetail.post_content%>
+      <%=wholeDetail.post_title%>
     </h2>
     <br>
     <h2><span class="badge bg-secondary" name="post_travelPlace">여행지</span>
-    <%=mbtiDetail.post_travelPlace%>
+      <%=wholeDetail.post_travelPlace%>
     </h2>
     <br>
     <h2><span class="badge bg-secondary" name="post_travelStartDate">여행 시작 날짜</span>
-    <%=mbtiDetail.post_travelStartDate%>
+      <%=wholeDetail.post_travelStartDate%>
     </h2>
     <br>
     <h2><span class="badge bg-secondary" name="post_travelEndDate">여행 종료 날짜</span>
-    <%=mbtiDetail.post_travelEndDate%>
+      <%=wholeDetail.post_travelEndDate%>
     </h2>
     <br>
     <h2><span class="badge bg-secondary" name="post_rooms">추천 숙소</span>
-    <%=mbtiDetail.post_rooms%>
+      <%=wholeDetail.post_rooms%>
     </h2>
     <br>
     <h2><span class="badge bg-secondary" name="post_transport">이동 수단</span>
-        <%=mbtiDetail.post_transport%>
+      <%=wholeDetail.post_transport%>
     </h2>
     <br>
     <h2><span class="badge bg-secondary" name="post_review">한 마디 후기</span>
-        <%=mbtiDetail.post_review%>
+      <%=wholeDetail.post_review%>
     </h2>
     <div>
         <img src="https://post-phinf.pstatic.net/MjAxODA0MDhfNCAg/MDAxNTIzMTE0NTM1Mjc5.VPYtVR6VFTRUb5Bd5TSrucmTqjkIK6YpXQLBAs5D99cg.mAM1gBElz_GsJ-9gcNXbAWbO5wpyxnvoGx1lpp20vHYg.JPEG/Gyeongju-travel-information-intro.jpg?type=w1200" alt = "경주" class="img-responsive" width="500px" height="300px" >
     </div>
     <br>
     <ul class="btn-group" style="margin-left: 600px;">
-        <% if(mbtiDetail.user_user_id == session){ %>
-            <button type="submit" class="btn btn-dark" onclick="location.href='/mbti/update/board/<%=mbti_id%>/<%= mbtiDetail.post_id%>'">수정</button>
-            <form action="/mbti/delete/board/<%=mbti_id%>/<%= mbtiDetail.post_id%>" method="post">
+        <% if(wholeDetail.user_user_id == session){ %>
+            <button type="submit" class="btn btn-dark" onclick="location.href='/mbti/update/board/<%= mbtiDetail.post_id%>'">수정</button>
+            <form action="/mbti/delete/board/<%= mbtiDetail.post_id%>" method="post">
               <button class="btn btn-dark">삭제</button>
             </form>
-            <button class="btn btn-dark" onclick="location.href='/mbti/mbtiBoard/<%=mbti_id%>'">목록</button>
+            <button class="btn btn-dark">목록</button>
           <% } else{ %>
-            <button class="btn btn-dark" onclick="location.href='/mbti/mbtiBoard/<%=mbti_id%>'">목록</button>
+            <button class="btn btn-dark">목록</button>
             <% } %>
       </ul>
 </body>

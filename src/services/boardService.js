@@ -1,19 +1,12 @@
 var boardQuery = require('../query/boardQuery')
 var pool = require('../../middleware/pool');
 
-exports.boardList = async(req, res) => {
-    try{
-        let list = await pool.query(boardQuery.boardList);
-        return list[0]
-    }catch(err){
-        console.log(err)
-        throw Error(err)
-    }
-}
 
-exports.boardInsert = async(post_name, post_type, post_content) => {
+exports.mbtiBoardList = async(mbti_id) => {
     try{
-        let insert = await pool.query(boardQuery.boardInsert[post_name, post_type, post_content])
+        console.log(mbti_id);
+        let insert = await pool.query(boardQuery.mbtiBoardList, [mbti_id])
+        console.log("test");
         return insert[0]
     }catch(err){
         console.log(err)
@@ -21,32 +14,25 @@ exports.boardInsert = async(post_name, post_type, post_content) => {
     }
 }
 
-exports.boardUpdate = async(post_name, post_type, post_content) => {
+exports.mypage = async(user_id) => {
     try{
-        let update = await pool.query(boardQuery.boardUpdate[post_name, post_type, post_content])
-        return update[0]
+        let user = await pool.query(boardQuery.mypage, [user_id])
+        return user[0]
     }catch(err){
         console.log(err)
-        throw Error(err)
+        return res.status(500).json(err)
     }
 }
 
-exports.boardDelete = async(post_num) => {
+exports.updateMypage = async(req) => {
     try{
-        let del =  await pool.query(boardQuery.boardDelete[post_num])
-        return del[0]
+        console.log("pass req");
+        console.log(req)
+        let mypage = await pool.query(boardQuery.updateMypage, req)
+        console.log(mypage[0]);
+        return mypage[0]
     }catch(err){
         console.log(err)
-        throw Error(err)
-    }
-}
-
-exports.boardDetail = async(post_num) => {
-    try{
-        let detail = await pool.query(boardQuery.boardUpdate[post_num])
-        return detail[0]
-    }catch(err){
-        console.log(err)
-        throw Error(err)
+        return res.status(500).json(err);
     }
 }

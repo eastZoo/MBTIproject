@@ -4,10 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var session = require('express-session')
 var logger = require('morgan');
+var methodOverride = require('method-override');
 
 var userRouter = require('./src/routes/userRoutes')
 var boardRouter = require('./src/routes/boardRoutes');
 var mbtiRouter = require('./src/routes/mbtiRoutes');
+var managerRouter = require('./src/routes/managerRoutes')
+var wholeRouter = require('./src/routes/wholeRoutes')
 
 var app = express();
 
@@ -26,12 +29,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(methodOverride("_method", {
+  methods: ["POST", "GET", "DELETE"]
+}))
 
 
 app.use('/board', boardRouter);
 app.use('/user', userRouter);
-app.use('/mbti', mbtiRouter)
+app.use('/mbti', mbtiRouter);
+app.use('/manager', managerRouter);
+app.use('/whole', wholeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

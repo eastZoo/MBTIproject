@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <title>mbti 게시판</title>
+</head>
+
+<body class="text-center" style="margin-top: 50px; margin-left: 400px; margin-right: 400px; ">
+  <h1>MT 전체 게시판</h1>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">게시글 번호</th>
+        <th scope="col">제목</th>
+        <th scope="col">작성자</th>
+        <th scope="col">작성일</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%
+      for(var i=0; i<wholeBoard.length; i++) {
+      %>
+      <tr>
+        <th><%= wholeBoard[i].post_id %></th>
+        <th><a href='/mbti/detail/<%= wholeBoard[i].post_id %>'><%= wholeBoard[i].post_title %></a></th>
+        <th><%= wholeBoard[i].user_user_id %></th>
+        <% let date = new Date(wholeBoard[i].post_writingTime) 
+        date = date.getFullYear() + "년 " + (date.getMonth() + 1) + "월 " + date.getDate() + "일 " + date.getHours() + "시 " + date.getMinutes() + "분 "
+        %>
+        <th><%= date %></th>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <button class="btn btn-sm btn-dark btn-block" type="button"
+    onclick='location.href="/mbti/board/register"'>생성</button>
+    <br><br><br><br><br>
+</body>
+
+</html>

@@ -1,74 +1,51 @@
 var boardServiece = require('../services/boardService');
 
-exports.boardList = async(req, res) => {
+exports.mbtiBoardList = async(req, res) =>{
+    const {mbti_id, user_id} = req.params;
+    console.log(mbti_id)
     try{
-        let list = await boardServiece.boardList();
-        return res.render('boardList', {list: list})
+        var session = req.session.user_id;
+        console.log(session)
+        let mbtiList = await boardServiece.mbtiBoardList(mbti_id)
+        return res.render('mbtiBoardList', {mbtiList: mbtiList, session : session})
     }catch(err){
         console.log(err)
         return res.status(500).json(err);
     }
 }
 
-exports.boardInsert = async(req, res) =>{
-    let{post_name, post_type, post_content} = req.body;
+exports.mypage = async(req, res) => {
     try{
-        await boardServiece.boardInsert(post_name, post_type, post_content)
-        return res.redirect('/board/list');
+        let session = req.session.user_id;
+        let user = await boardServiece.mypage(session);
+        return res.render('mypage', {session:session, user:user});
+    }catch(err){
+        console.log(err)
+        return res.status(500).json(err)
+    }
+}
+
+exports.updateMypage = async(req, res) => {
+    const {user_name, user_tel, user_address, user_travel, mbti_mbti_id} = req.body
+    const {user_id} = req.params
+    try{
+        let session = req.session.user_id
+        console.log(session)
+        let update = await boardServiece.updateMypage([user_name, user_address, user_tel, user_travel, mbti_mbti_id, session])
+        console.log(update);
+        return res.redirect('/board/mypage/update')
     }catch(err){
         console.log(err)
         return res.status(500).json(err);
     }
 }
 
-exports.boardInsertPage = async(req, res) =>{
+exports.updateMypageCom = async(req, res) => {
+    const {user_id} = req.params
     try{
-        return res.render('insertBoard')
-    }catch(err){
-        console.log(err)
-        return res.status(500).json(err);
-    }
-}
-
-exports.boardUpdate = async(req, res) =>{
-    let {post_name, post_type, post_content, member_member_id} = req.body
-    let {post_num} = req.params
-    try{
-        await boardServiece.boardUpdate(post_name, post_num, post_type, post_content, member_member_id)
-        return res.render('insertBoard')
-    }catch(err){
-        console.log(err)
-        return res.status(500).json(err);
-    }
-}
-
-exports.boardUpdatePage = async(req, res) =>{
-    let {board_num} = req.params;
-    try{
-        let update = await boardServiece.boardRead(board_num)
-        return res.render('boardUpdate', {update:update})
-    }catch(err){
-        console.log(err)
-        return res.status(500).json(err);
-    }
-}
-
-exports.boardDelete = async(req, res) =>{
-    let {board_num} = req.params;
-    try{
-        await boardServiece.boardDelete(board_num)
-        return res.redirect('/board/list')
-    }catch(err){
-        console.log(err)
-        return res.status(500).json(err);
-    }
-}
-
-exports.boardRead = async(req, res) =>{
-    let {board_num} = req.params;
-    try{
-        let update = await boardServiece.boardRead(board_num)
-        return res.render('boardDetail', {update:update})
+        let session = req.session.user_id;
+        let user = await boardServiece.mypage(user_id)
+        return res.render('mypageUpdate', {session:session, user:user})
     }catch(err){
         console.log(err)
         return res.status(500).json(err);

@@ -10,7 +10,7 @@ exports.signUp = async(req, res) => {
                 location.href='/user/signup';
                 </script>`);
         }
-        return res.redirect('/user/signin');
+        return res.redirect('/user/main');
     }catch(error){
         // 중복된 아이디가 있을 경우
         return res.send(`<script type="text/javascript">
@@ -34,7 +34,6 @@ exports.signIn = async(req, res) => {
     // 로그인 시 필요한 정보를 입력하는 부분
     const {user_id, user_password} = req.body;
     try{
-        console.log(user_id, user_password)
         let user = await userServices.signIn(user_id, user_password);
         req.session.user_id = user[0].user_id;
         if (user[0].user_id == user_id && user[0].user_password == user_password){
@@ -42,7 +41,7 @@ exports.signIn = async(req, res) => {
             return res.send('<script type="text/javascript">alert("환영합니다!"); location.href="/user/main";</script> session:${req.session}');
         }
         req.session.save(function(){
-        res.redirect('/user/main');
+        res.redirect('/board/list');
         })
     }catch(err){
         res.send('<script type="text/javascript">alert("아이디 또는 비밀번호를 확인해주세요"); location.href="/user/signin";</script>');
@@ -82,13 +81,13 @@ exports.signOut = async(req, res) =>{
 
 exports.mainPage = async(req, res) => {
     // 로그인한 회원의 이름을 가져오는 부분
-    let {user_name, user_id} = req.params;
+    let {user_id} = req.session;
     try{
-        let user = await userServices.mainPage(user_name, user_id);
-        console.log(user)
+        let user = await userServices.mainPage(user_id);
         var session = req.session.user_id;
         var users = req.session;
-        return res.render('index', {user:user, session:session, users:users});
+        var user_name = user[0].user_name
+        return res.render('mbtiBoard', {user:user, session:session, users:users, user_name:user_name});
     }catch(err){
         return res.status(500).json(err);
     }

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    #post_id{visibility: hidden;}
+</style>
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+</head>
+
+<body class="text-center" style="margin-top: 50px; margin-right: 80px; margin-left: 80px; margin-bottom: 20px;">
+  <form action="/mbti/update/board/<%=mbti_id%>/<%=user[0].post_id%>" method="POST">
+    <div id="post_id" >
+        <input name="post_id" value="<%=user[0].post_id%> ">
+    </div>
+    <div class="input-group input-group-lg">
+      <span class="input-group-text" name="post_title" value="<%=user[0].post_title%>">게시글 제목</span>
+      <input type="text" class="form-control" name="post_title" placeholder="게시글 제목" value="<%=user[0].post_title%>">
+    </div>
+    <div class="row">
+      <div class="col">
+        <span class="input-group-text" name="post_travelPlace" value="<%=user[0].post_travelPlace%>">여행 장소</span>
+        <input type="text" class="form-control" placeholder="여행 장소" name="post_travelPlace" value="<%=user[0].user_travelPlace%>"/>
+      </div>
+      <div class="col">
+        <span class="input-group-text" name="post_travelStartDate" value="<%=user[0].post_travelStartDate%>">여행 시작 날짜</span>
+        <input type="text" class="form-control" placeholder="여행 시작 날짜" name="post_travelStartDate" value="<%=user[0].post_travelStartDate%>"/>
+      </div>
+      <div class="col">
+        <span class="input-group-text" name="post_travelEndDate" value="<%=user[0].post_travelEndDate%>">여행 마지막 날짜</span>
+        <input type="text" class="form-control" placeholder="여행 마지막 날짜" name="post_travelEndDate" value="<%=user[0].post_travelEndDate%>"/>
+      </div>
+      <div class="col">
+        <span class="input-group-text" name="post_transport" value="<%=user[0].post_transport%>">여행 이동수단</span>
+        <select class="form-select" name="post_transport" aria-label="Default select example">
+          <option selected name="post_transport">여행 이동수단</option>
+          <option value="자가" name="post_transport">자가</option>
+          <option value="대중교통" name="post_transport">대중교통(버스, 지하철)</option>
+          <option value="시외버스" name="post_transport">시외버스</option>
+          <option value="기차" name="post_transport">기차</option>
+        </select>
+      </div>
+      <div class="col">
+        <span class="input-group-text" name="post_rooms" value="<%=user[0].post_rooms%>">여행 숙소</span>
+        <input type="text" class="form-control" placeholder="여행 숙소" name="post_rooms" value="<%=user[0].post_rooms%>"/>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label"></label>
+      <span class="input-group-text" name="post_review" value="<%=user[0].post_review%>">여행 한 줄 소감</span>
+      <textarea class="form-control" rows="1" name="post_review" placeholder="여행 한 줄 소감" value="<%=user[0].post_review%>"><%=user[0].post_review%></textarea>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label"></label>
+      <span class="input-group-text" name="post_content" value="<%=user[0].post_content%>">게시글 내용</span>
+      <textarea class="form-control" rows="3" name="post_content" placeholder="게시글 내용" value="<%=user[0].post_content%>"><%=user[0].post_content%></textarea>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-dark btn-lg" style="margin-left: 1200px;">저장</button>
+  </form>
+
+
+
+
+
+
+
+      <!-- Optional JavaScript; choose one of the two! -->
+
+      <!-- Option 1: Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+      <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
