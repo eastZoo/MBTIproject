@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <title>mbti 여행지 생성</title>
+</head>
+
+<body class="text-center" style="margin-top: 50px; margin-left: 400px; margin-right: 400px; ">
+
+    <form action="/mbti/board/register/:post_id" method="POST" style="text-align: center; border: 5px;">
+        <h1>mbti 여행지 생성</h1>
+        <br>
+        <br>
+        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
+            <input type="text" name="post_title" class="form-control">
+            <label for="floatingInput">제목</label>
+        </div>
+        <br>
+        <br>
+        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
+            <input type="text" name="post_content" class="form-control">
+            <label for="floatingInput">내용</label>
+        </div>
+        <br>
+        <br>
+        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
+            <input type="text" name="post_travelPlace" class="form-control">
+            <label for="floatingInput">여행지</label>
+        </div>
+        <br>
+        <br>
+        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
+            <input type="text" name="post_travelStartDate" class="form-control">
+            <label for="floatingInput">여행 시작 날짜</label>
+        </div>
+        <br>
+        <br>
+        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
+            <input type="text" name="post_travelEndDate" class="form-control">
+            <label for="floatingInput">여행 종료 날짜</label>
+        </div>
+        <br>
+        <br>
+        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
+            <input type="text" name="post_rooms" class="form-control">
+            <label for="floatingInput">추천 숙소</label>
+        </div>
+        <br>
+        <br>
+        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
+            <input type="text" name="post_transport" class="form-control">
+            <label for="floatingInput">이동 수단</label>
+        </div>
+        <br>
+        <br>
+        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
+            <input type="text" name="post_review" class="form-control">
+            <label for="floatingInput">한 마디 후기</label>
+        </div>
+        <br>
+        <br>
+        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
+            <input type="text" name="board_board_id" class="form-control">
+            <label for="floatingInput">게시판 번호</label>
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-dark" style="width: 300px; height: 50px;">작성하기</button>
+        <br>
+        <br>
+        <br>
+    </form>
+</body>
+
+</html>

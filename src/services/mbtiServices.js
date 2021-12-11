@@ -23,3 +23,14 @@ exports.mbtiDetail = async(req, res) => {
         return res.status(500).json(err);
     }
 }
+
+exports.insertMBTIBoard = async(req, res) => {
+    try{
+        let insertMBTIBoard = await pool.query(mbtiQuery.insertMBTIBoard, req)
+        console.log("pass");
+        return insertMBTIBoard[0]
+    }catch(err){
+        console.log(err)
+        return res.status(500).json(err);
+    }
+}
