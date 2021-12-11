@@ -21,9 +21,15 @@ exports.signIn = async(user_id, user_password) => {
     }
 }
 
+<<<<<<< HEAD
 exports.mainPage = async(user_id) => {
     try{
         let user = await pool.query(userQuery.mainPage, user_id)
+=======
+exports.mainPage = async(user_name, user_id, mbti_mbti_id) => {
+    try{
+        let user = await pool.query(userQuery.mainPage, [user_name, user_id, mbti_mbti_id])
+>>>>>>> 824ed27497077aec73de35e06d4889dfe37fe000
         return user[0]
     }catch(err){
         console.log(err)

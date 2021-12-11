@@ -81,6 +81,7 @@ exports.signOut = async(req, res) =>{
 
 exports.mainPage = async(req, res) => {
     // 로그인한 회원의 이름을 가져오는 부분
+<<<<<<< HEAD
     let {user_id} = req.session;
     try{
         let user = await userServices.mainPage(user_id);
@@ -88,6 +89,15 @@ exports.mainPage = async(req, res) => {
         var users = req.session;
         var user_name = user[0].user_name
         return res.render('mbtiBoard', {user:user, session:session, users:users, user_name:user_name});
+=======
+    let {user_name, user_id, mbti_mbti_id} = req.params;
+    try{
+        let user = await userServices.mainPage(user_name, user_id, mbti_mbti_id);
+        console.log(user[0].mbti_mbti_id)
+        var session = req.session.user_id;
+        var users = req.session;
+        return res.render('mbtiBoard', {user:user, session:session, users:users});
+>>>>>>> 824ed27497077aec73de35e06d4889dfe37fe000
     }catch(err){
         return res.status(500).json(err);
     }

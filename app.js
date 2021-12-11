@@ -9,8 +9,11 @@ var methodOverride = require('method-override');
 var userRouter = require('./src/routes/userRoutes')
 var boardRouter = require('./src/routes/boardRoutes');
 var mbtiRouter = require('./src/routes/mbtiRoutes');
+<<<<<<< HEAD
 var managerRouter = require('./src/routes/managerRoutes')
 var wholeRouter = require('./src/routes/wholeRoutes')
+=======
+>>>>>>> 824ed27497077aec73de35e06d4889dfe37fe000
 
 var app = express();
 
@@ -37,8 +40,12 @@ app.use(methodOverride("_method", {
 app.use('/board', boardRouter);
 app.use('/user', userRouter);
 app.use('/mbti', mbtiRouter);
+<<<<<<< HEAD
 app.use('/manager', managerRouter);
 app.use('/whole', wholeRouter);
+=======
+
+>>>>>>> 824ed27497077aec73de35e06d4889dfe37fe000
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

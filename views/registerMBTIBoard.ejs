@@ -1,83 +1,125 @@
+<!-- TODO: 
+1. 회원가입 버튼을 누르면 DB에 저장되는 것과 동시에 메인페이지로 이동 -->
+
 <!doctype html>
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <title>mbti 여행지 생성</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Hello, world!</title>
 </head>
 
-<body class="text-center" style="margin-top: 50px; margin-left: 400px; margin-right: 400px; ">
-
-    <form action="/mbti/board/register/<%=mbti_id%>/:post_id" method="POST" style="text-align: center; border: 5px;">
-        <h1>mbti 여행지 생성</h1>
-        <br>
-        <h2 name="mbti_id" style="visibility: hidden;"><%=mbti_id%></h2>
-        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="post_title" class="form-control">
-            <label for="floatingInput">제목</label>
+<body class="text-center img js-fullheight" style="background-image: url(/images/background.jpg);">
+    <form action="/mbti/board/register/:post_id" method="POST" style="text-align: center; border: 5px;">
+        <div id="booking" class="section" style="padding-top: 3%; padding-bottom: 7%;" >
+            <div class="section-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="booking-form">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <span class="form-label">제목</span>
+                                            <input class="form-control" name="post_title" type="text" placeholder="제목">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <span class="form-label">내용</span>
+                                            <textarea class="form-control" name="post_content" type="text" placeholder="내용" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">여행지 이름</span>
+                                            <input class="form-control" name="post_travelPlace" type="text" placeholder="여행지 이름">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">여행 시작 일자</span>
+                                            <input class="form-control" name="post_travelStartDate"  type="date" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">여행 종료 일자</span>
+                                            <input class="form-control" name="post_travelEndDate" type="date" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">추천 숙소</span>
+                                            <input class="form-control" name="post_rooms" type="text" placeholder="추천 숙소">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">주요 이동 수단</span>
+                                            <input class="form-control" name="post_transport" type="text" placeholder="주요 이동 수단">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">한 마디 후기</span>
+                                            <input class="form-control" name="post_review" type="text" placeholder="한 마디 후기">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">게시판 번호</span>
+                                            <input class="form-control" name="board_board_id" type="text" placeholder="게시판 번호" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button type="submit" class="btn me-md-2 btn-dark" type="button">글 등록</button>
+                                      </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <br>
-        <br>
-        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <textarea type="text" name="post_content" class="form-control"></textarea>
-            <label for="floatingInput">내용</label>
-        </div>
-        <br>
-        <br>
-        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="post_travelPlace" class="form-control">
-            <label for="floatingInput">여행지</label>
-        </div>
-        <br>
-        <br>
-        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="post_travelStartDate" class="form-control">
-            <label for="floatingInput">여행 시작 날짜</label>
-        </div>
-        <br>
-        <br>
-        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="post_travelEndDate" class="form-control">
-            <label for="floatingInput">여행 종료 날짜</label>
-        </div>
-        <br>
-        <br>
-        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="post_rooms" class="form-control">
-            <label for="floatingInput">추천 숙소</label>
-        </div>
-        <br>
-        <br>
-        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="post_transport" class="form-control">
-            <label for="floatingInput">이동 수단</label>
-        </div>
-        <br>
-        <br>
-        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="post_review" class="form-control">
-            <label for="floatingInput">한 마디 후기</label>
-        </div>
-        <br>
-        <br>
-        <div class="form-floating" style="margin-right: 400px; margin-left: 400px;">
-            <input type="text" name="board_board_id" class="form-control">
-            <label for="floatingInput">게시판 번호</label>
-        </div>
-        <br>
-        <br>
-        <button type="submit" class="btn btn-dark" style="width: 300px; height: 50px;">작성하기</button>
-        <br>
-        <br>
-        <br>
     </form>
+    
+    <!-- <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script> -->
+  
+      <!-- Optional JavaScript; choose one of the two! -->
+      <script src="../public/javascripts/main.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+   
 </body>
 
 </html>
